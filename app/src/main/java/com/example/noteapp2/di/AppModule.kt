@@ -42,7 +42,8 @@ object AppModule {
             getNoteByIdUseCase = GetNoteByIdUseCase(repository),
             getNotesUseCases = GetNotesUseCase(repository),
             addNoteUseCase = AddNoteUseCase(repository),
-            deleteNoteUseCase = DeleteNoteUseCase(repository)
+            deleteNoteUseCase = DeleteNoteUseCase(repository),
+//            searchNotesUseCase = SearchNotesUseCase(repository)
         )
     }
 }

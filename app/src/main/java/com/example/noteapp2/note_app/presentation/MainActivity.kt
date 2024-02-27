@@ -56,6 +56,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                             AddEditNoteScreen(navController = navController,)
                         }
+//                        composable(
+//                            route = Screen.SearchNotesScreen.route
+//                        ){
+//                            SearchNotesScreen(navController = navController)
+//                        }
                     }
                 }
             }
