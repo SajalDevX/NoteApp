@@ -17,6 +17,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.noteapp2.note_app.presentation.add_edit_note.AddEditNoteScreen
 import com.example.noteapp2.note_app.presentation.notes.NotesScreen
+import com.example.noteapp2.note_app.presentation.search_notes.SearchNotesScreen
 import com.example.noteapp2.note_app.presentation.util.Screen
 import com.example.noteapp2.ui.theme.NoteApp2Theme
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,7 +28,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NoteApp2Theme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -56,11 +56,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                             AddEditNoteScreen(navController = navController,)
                         }
-//                        composable(
-//                            route = Screen.SearchNotesScreen.route
-//                        ){
-//                            SearchNotesScreen(navController = navController)
-//                        }
+                        composable(
+                            route = Screen.SearchNotesScreen.route
+                        ){
+                            SearchNotesScreen(navController = navController)
+                        }
                     }
                 }
             }

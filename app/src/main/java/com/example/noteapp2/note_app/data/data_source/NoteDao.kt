@@ -19,8 +19,9 @@ interface NoteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note:Note)
 
-//    @Query("SELECT * FROM note WHERE title LIKE '%' || :searchTerm || '%' OR content LIKE '%' || :searchTerm || '%'")
-//    fun searchNotes(searchTerm: String): Flow<List<Note>>
+    @Query("SELECT * FROM note WHERE title LIKE :searchTermFirstChar || '%' OR content LIKE :searchTermFirstChar || '%'")
+    fun searchNotes(searchTermFirstChar: String): Flow<List<Note>>
+
 
     @Delete
     suspend fun deleteNote(note:Note)

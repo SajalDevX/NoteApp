@@ -13,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
+import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -22,6 +23,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
@@ -40,6 +42,7 @@ fun AddEditNoteScreen(
     navController: NavController,
     viewModel: AddEditNoteViewModel = hiltViewModel()
 ) {
+    val scaffoldState = rememberBottomSheetScaffoldState()
     val titleState = viewModel.noteTitle.value
     val contentState = viewModel.noteContent.value
     val dayState = viewModel.formattedDayOfWeek
@@ -54,7 +57,9 @@ fun AddEditNoteScreen(
                     navController.navigateUp()
                 }
 
-                is AddEditNoteViewModel.UiEvent.ShowSnackBar -> TODO()
+                is AddEditNoteViewModel.UiEvent.ShowSnackBar -> {
+
+                }
             }
         }
     }

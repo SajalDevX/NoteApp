@@ -10,6 +10,7 @@ import com.example.noteapp2.note_app.domain.use_case.DeleteNoteUseCase
 import com.example.noteapp2.note_app.domain.use_case.GetNoteByIdUseCase
 import com.example.noteapp2.note_app.domain.use_case.GetNotesUseCase
 import com.example.noteapp2.note_app.domain.use_case.NoteUseCases
+import com.example.noteapp2.note_app.domain.use_case.SearchNotesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +44,7 @@ object AppModule {
             getNotesUseCases = GetNotesUseCase(repository),
             addNoteUseCase = AddNoteUseCase(repository),
             deleteNoteUseCase = DeleteNoteUseCase(repository),
-//            searchNotesUseCase = SearchNotesUseCase(repository)
+            searchNotesUseCase = SearchNotesUseCase(repository)
         )
     }
 }

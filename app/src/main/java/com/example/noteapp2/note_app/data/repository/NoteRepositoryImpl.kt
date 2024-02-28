@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.Flow
 class NoteRepositoryImpl(
     private val dao: NoteDao
 ) : NoteRepository {
-//    override suspend fun searchNotes(searchTerm: String): Flow<List<Note>> {
-//        return dao.searchNotes(searchTerm)
-//    }
+    override suspend fun searchNotes(searchTerm: String): Flow<List<Note>> {
+        return dao.searchNotes(searchTerm)
+    }
     override fun getNotes(): Flow<List<Note>> {
         return dao.getNotes()
     }

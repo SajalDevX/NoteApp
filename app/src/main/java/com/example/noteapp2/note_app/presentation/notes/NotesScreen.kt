@@ -70,7 +70,7 @@ fun NotesScreen(
                 actions = {
                     IconButton(
                         onClick = {
-                            // Search Functionality
+                            navController.navigate(Screen.SearchNotesScreen.route)
                         }
                     ) {
                         Icon(
